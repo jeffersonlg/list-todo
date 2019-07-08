@@ -38,7 +38,6 @@ const ItemDelete = styled.span`
     color: #808B96;
     font-weight: bold;
 `
-
 const TodoItem = ({ value, idItem, data}) => {
     const [checked, setchecked] = useState(false)
     const [todo, setTodo] = useState(data)
@@ -65,13 +64,12 @@ const TodoItem = ({ value, idItem, data}) => {
                 <ItemSpan>
                     { value }
                 </ItemSpan>
-                </ItemLabel>
-                <ItemDelete
-                    onClick={handleDelete}
-                >
-                    x
-                </ItemDelete>
-    
+            </ItemLabel>
+            <ItemDelete
+                onClick={handleDelete}
+            >
+                x
+            </ItemDelete>
         </Item>
     )
 }

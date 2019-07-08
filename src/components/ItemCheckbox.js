@@ -1,4 +1,4 @@
-import React , { useState } from  'react'
+import React from  'react'
 import styled from 'styled-components'
 
 const ItemCheckBox = styled.div`
@@ -44,7 +44,7 @@ const ItemStyledCheckbox = styled.div`
     }
 `
 const TodoItemCheckbox = ({ checked, ...props }) => {
-
+    
     return (
         <ItemCheckBox>
             <ItemHiddenCheck checked={checked} {...props} />

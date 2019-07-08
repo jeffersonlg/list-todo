@@ -1,9 +1,7 @@
-/* eslint-disable no-undef */
 import React , { useState, useEffect } from  'react'
 import styled from 'styled-components'
 
 import TodoItem from  './TodoItem'
-
 import todoServece from '../service/todo.service'
 
 const Card = styled.div`
@@ -63,33 +61,35 @@ const CardList = ({ title }) => {
     }
 
     return (
-      <Card>
-        <CardHeader>
-            <CardTitle>
-                { title }
-            </CardTitle>
-            <CardSearch
-                type="text"
-                placeholder="Add a new todo..."
-                onKeyDownCapture={handleKeypressChange}
-                onInput={(e) => setInputText(e.target.value)}
-            />
-        </CardHeader>
-        <CardBody>
-            {todos ?
-                todos.map(item => (
-                    <TodoItem
-                        idItem={item.id}
-                        key={item.id}
-                        value={item.name}
-                        data={todos}
-                    />
-                ))
-                :
-                <LabelMsg> Não há Todos </LabelMsg>
-            }
-        </CardBody>
-      </Card>
+        <Card>
+            <CardHeader>
+                <CardTitle>
+                    { title }
+                </CardTitle>
+                <CardSearch
+                    type="text"
+                    placeholder="Add a new todo..."
+                    onKeyDownCapture={handleKeypressChange}
+                    onInput={(e) => setInputText(e.target.value)}
+                />
+            </CardHeader>
+            <CardBody>
+                {todos ?
+                    todos.map(item => (
+                        <TodoItem
+                            idItem={item.id}
+                            key={item.id}
+                            value={item.name}
+                            data={todos}
+                        />
+                    ))
+                    :
+                    <LabelMsg>
+                        Não há Todos
+                    </LabelMsg>
+                }
+            </CardBody>
+        </Card>
     )
 }
 
